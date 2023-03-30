@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:51:14 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/03/28 14:24:24 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:41:05 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		error();
 	fd = check_filename(argv[1]);
+	if (fd < 0)
+		error();
 	map = ft_calloc(1, sizeof(t_map));
 	if (!map)
 		error();
