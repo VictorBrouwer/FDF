@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:59:30 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/03/23 10:45:21 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/03/30 14:10:35 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ void	parse_map(int fd, t_map *map)
 	t_points_link	*old_point;
 
 	line = get_next_line(fd);
+	if (!line)
+		error();
 	map->point_list = ft_calloc(1, sizeof(t_points_link *));
+	if (!map->point_list)
+		error();
 	map->num_lines = 0;
 	old_point = NULL;
 	while (line != NULL)
@@ -44,6 +48,7 @@ t_points_link	*add_points(char **str_arr, t_map *map, \
 	i = 0;
 	while (str_arr[i] && str_arr[i][0] != '\n')
 	{
+		check_values(str_arr[i]);
 		new_point = ft_calloc(1, sizeof(t_points_link));
 		if (!new_point)
 			error();

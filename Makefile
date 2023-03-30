@@ -8,7 +8,7 @@ INC_DIR :=	./include \
 CFLAGS	= -Wextra -Wall -Werror
 
 ifdef DEBUG
-CFLAGS += -pg
+CFLAGS += -g
 endif
 
 LIBMLX	:= ./MLX42 

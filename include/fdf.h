@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:52:20 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/03/29 11:20:45 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/03/30 14:05:18 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,5 +135,7 @@ void			pos_and_size_loop(t_map *map);
 void			angle_loop(t_map *map);
 void			close_loop(mlx_t *mlx);
 void			my_scroll_hooks(double xdelta, double ydelta, void *param);
+void			check_values(char *s);
+int				ft_is_fdf_char(int c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 11:04:46 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/03/23 10:19:50 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/03/30 14:12:27 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,27 @@ t_points_link	*get_last_link(t_points_link *point)
 	while (point->next != NULL)
 		point = point->next;
 	return (point);
+}
+
+void	check_values(char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (ft_is_fdf_char(s[i]) == 0)
+			error();
+		i++;
+	}
+}
+
+int	ft_is_fdf_char(int c)
+{
+	if ((c >= 'A' && c <= 'F') || (c >= 'a' & c <= 'f')
+		|| (c >= '0' && c <= '9') || c == ',' || c == 'x' || c == '-')
+		return (1);
+	if (c == ' ' || c == '\n' || c == '\t' || c == '\r' || c == '\v')
+		return (1);
+	return (0);
 }
