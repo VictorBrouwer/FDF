@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:51:14 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/03/30 13:41:05 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/03/31 11:03:02 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	mlx_start(map);
 	clean_up_arr(map->points, map);
 	free(map);
+	close(fd);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 14:58:14 by vbrouwer          #+#    #+#             */
-/*   Updated: 2023/03/23 10:16:12 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2023/03/31 11:03:47 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	get_abs(int x)
 
 int	check_bounds(int x, int y)
 {
-	if (x < 0 || x > WIDTH)
+	if (x < 0 || x >= WIDTH)
 		return (-1);
-	if (y < 0 || y > HEIGHT)
+	if (y < 0 || y >= HEIGHT)
 		return (-1);
 	return (1);
 }
